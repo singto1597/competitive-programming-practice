@@ -263,7 +263,9 @@ def find_tasks(task_id: str) -> list[tuple[str, str]]:
     """โฟลเดอร์ใต้ problems/ ที่ตรงกับรหัส → [(โฟลเดอร์แม่, path เต็ม)]
 
     เทียบแบบไม่สนตัวพิมพ์: ชื่อโฟลเดอร์เท่ากับรหัส หรือขึ้นต้นด้วย `<รหัส>_`
-    ตรงตัวชนะแบบขึ้นต้น — เช่นมีทั้ง `1234A` กับ `1234A_Alice_and_Bob` ให้เลือกอันแรก
+    เลขลำดับนำหน้า (`01_`) ถูกตัดทิ้งก่อนเทียบ — `run.py Weird_Algorithm`
+    จึงหา `problems/cses/01_.../01_Weird_Algorithm` เจอ
+    ตรงตัวชนะแบบขึ้นต้น — เช่นมีทั้ง `Two_Sets` กับ `Two_Sets_II` ให้เลือกอันแรก
     """
     tid = task_id.lower()
     exact: list[tuple[str, str]] = []
@@ -274,10 +276,11 @@ def find_tasks(task_id: str) -> list[tuple[str, str]]:
                          if not d.startswith(".") and not is_support_dirname(d))
         for name in dirs:
             low = name.lower()
+            stripped = _ORDER_PREFIX_RE.sub("", name).lower()
             item = (root, os.path.join(root, name))
-            if low == tid:
+            if low == tid or stripped == tid:
                 exact.append(item)
-            elif low.startswith(tid + "_"):
+            elif low.startswith(tid + "_") or stripped.startswith(tid + "_"):
                 prefixed.append(item)
 
     return exact or prefixed

@@ -23,6 +23,7 @@ practice/
 ├── .vscode/             ← tasks.json (build/run) · launch.json (F5) · settings.json
 │
 ├── problems/            ← 1 โจทย์ = 1 โฟลเดอร์
+│   ├── cses/              CSES 400 ข้อ แยก 18 หัวข้อ — ดู problems/cses/README.md
 │   ├── codeforces/
 │   ├── programming.in.th/
 │   ├── toi/

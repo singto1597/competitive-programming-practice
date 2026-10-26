@@ -1,0 +1,28 @@
+# 01. Introductory Problems
+
+24 ข้อ · ทำเสร็จแล้วเปลี่ยน `[ ]` เป็น `[x]`
+
+- [ ] [Weird Algorithm](01_Weird_Algorithm)
+- [ ] [Missing Number](02_Missing_Number)
+- [ ] [Repetitions](03_Repetitions)
+- [ ] [Increasing Array](04_Increasing_Array)
+- [ ] [Permutations](05_Permutations)
+- [ ] [Number Spiral](06_Number_Spiral)
+- [ ] [Two Knights](07_Two_Knights)
+- [ ] [Two Sets](08_Two_Sets)
+- [ ] [Bit Strings](09_Bit_Strings)
+- [ ] [Trailing Zeros](10_Trailing_Zeros)
+- [ ] [Coin Piles](11_Coin_Piles)
+- [ ] [Palindrome Reorder](12_Palindrome_Reorder)
+- [ ] [Gray Code](13_Gray_Code)
+- [ ] [Tower of Hanoi](14_Tower_of_Hanoi)
+- [ ] [Creating Strings](15_Creating_Strings)
+- [ ] [Apple Division](16_Apple_Division)
+- [ ] [Chessboard and Queens](17_Chessboard_and_Queens)
+- [ ] [Raab Game I](18_Raab_Game_I)
+- [ ] [Mex Grid Construction](19_Mex_Grid_Construction)
+- [ ] [Knight Moves Grid](20_Knight_Moves_Grid)
+- [ ] [Grid Coloring I](21_Grid_Coloring_I)
+- [ ] [Digit Queries](22_Digit_Queries)
+- [ ] [String Reorder](23_String_Reorder)
+- [ ] [Grid Path Description](24_Grid_Path_Description)

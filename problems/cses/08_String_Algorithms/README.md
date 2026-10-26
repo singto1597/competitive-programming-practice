@@ -1,0 +1,25 @@
+# 08. String Algorithms
+
+21 ข้อ · ทำเสร็จแล้วเปลี่ยน `[ ]` เป็น `[x]`
+
+- [ ] [Word Combinations](01_Word_Combinations)
+- [ ] [String Matching](02_String_Matching)
+- [ ] [Finding Borders](03_Finding_Borders)
+- [ ] [Finding Periods](04_Finding_Periods)
+- [ ] [Minimal Rotation](05_Minimal_Rotation)
+- [ ] [Longest Palindrome](06_Longest_Palindrome)
+- [ ] [All Palindromes](07_All_Palindromes)
+- [ ] [Required Substring](08_Required_Substring)
+- [ ] [Palindrome Queries](09_Palindrome_Queries)
+- [ ] [Finding Patterns](10_Finding_Patterns)
+- [ ] [Counting Patterns](11_Counting_Patterns)
+- [ ] [Pattern Positions](12_Pattern_Positions)
+- [ ] [Distinct Substrings](13_Distinct_Substrings)
+- [ ] [Distinct Subsequences](14_Distinct_Subsequences)
+- [ ] [Repeating Substring](15_Repeating_Substring)
+- [ ] [String Functions](16_String_Functions)
+- [ ] [Inverse Suffix Array](17_Inverse_Suffix_Array)
+- [ ] [String Transform](18_String_Transform)
+- [ ] [Substring Order I](19_Substring_Order_I)
+- [ ] [Substring Order II](20_Substring_Order_II)
+- [ ] [Substring Distribution](21_Substring_Distribution)
