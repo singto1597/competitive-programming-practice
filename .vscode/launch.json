@@ -1,0 +1,58 @@
+{
+    // F5 = debug — ใช้ได้เพราะ tools/run.py วาง binary ไว้ที่ path คงที่
+    // (<โฟลเดอร์โจทย์>/.run/bin) ไม่ผูกกับชื่อไฟล์ จึงไม่ต้องแก้ launch.json ต่อข้อ
+    //
+    // ⚠️ กด F5 ได้เฉพาะตอนเปิดไฟล์ .cpp ที่อยู่ "ชั้นบนสุดของโฟลเดอร์โจทย์" เท่านั้น
+    //    เพราะ program/cwd ใช้ ${fileDirname} — ถ้าเปิดไฟล์ใน provided/ หรือ local/
+    //    อยู่ preLaunchTask จะ build ถูกข้อ (run.py ถอยกลับไปหาไฟล์ที่เราส่งให้เอง)
+    //    แต่ตัว debugger จะไปหา .run/bin ในโฟลเดอร์นั้น · เปิดไฟล์ชั้นบนสุดก่อนกด F5
+    //
+    // ⚠️ F5 ต้องมี gdb — เครื่องนี้มีอยู่แล้ว ถ้าย้ายไปเครื่องที่ไม่มี
+    //    (เช่น Fedora ใหม่ ๆ ยังไม่ได้ลง) ให้ `sudo dnf install gdb`
+    //    ระหว่างนี้ใช้ task "C++: compile with AddressSanitizer" แทนได้
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "C++: debug (Linux)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/.run/bin",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "setupCommands": [
+                {
+                    "description": "เปิด pretty-printing ของ STL (ดู vector/string อ่านง่ายขึ้น)",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C++: build only"
+        },
+        {
+            "name": "C++: debug (Windows / MinGW)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}\\.run\\bin.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "เปิด pretty-printing ของ STL",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C++: build only"
+        }
+    ]
+}

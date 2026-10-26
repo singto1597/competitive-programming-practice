@@ -1,0 +1,24 @@
+# normalize line endings
+* text=auto eol=lf
+
+# สคริปต์ที่ grader ให้มา — ต้องรันได้ทั้งสองเครื่อง
+*.sh  text eol=lf
+*.bat text eol=crlf
+
+# binary — อย่าแตะ
+*.pdf  binary
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.zip  binary
+*.exe  binary
+*.o    binary
+*.bmp  binary
+*.docx binary
+*.pptx binary
+
+# ⚠️ ตั้งใจ "ไม่" ใส่ *.out binary — นามสกุล .out ในนี้มีสองความหมาย
+#   · binary ที่คอมไพล์ออกมา → ถูก .gitignore อยู่แล้ว ไม่มีทางเข้า git
+#   · sample/*.out ที่ grader ให้มาใช้ "เทียบคำตอบ" → ต้องเป็น text ถึงจะ diff ออก
+# ถ้าใส่ *.out binary จะไปโดนตัวหลัง ทำให้ diff ไม่ได้ (binary: set → diff: unset)
