@@ -6,7 +6,7 @@ struct Pigad{
     int x, y;
 };
 
-char dc[4] = {'L', 'R', 'U', 'D'};
+char dc[4] = {'L', 'R', 'D', 'U'};
 int  dx[4] = {-1 ,  1 ,  0 ,  0 };
 int  dy[4] = { 0 ,  0 ,  1 , -1 };
 
@@ -43,6 +43,7 @@ int main(){
 
     bool isFound = false;
 
+
     while(!q.empty()){
         int temp_x = q.front().x;
         int temp_y = q.front().y;
@@ -73,7 +74,30 @@ int main(){
         return 0;
     }
 
-    
+    cout << "YES" << endl;
+
+    int count = 0;
+
+    stack<char> paths;
+
+    int temp_x = end.x;
+    int temp_y = end.y;
+
+    while (visited[temp_y][temp_x].first != 'S'){
+        count++;
+        paths.push(visited[temp_y][temp_x].first);
+        Pigad temp = visited[temp_y][temp_x].second;
+        temp_x = temp.x;
+        temp_y = temp.y;
+
+    }
+
+    cout << count << endl;
+
+    while (!paths.empty()){
+        cout << paths.top();
+        paths.pop();
+    }
 
 
 
